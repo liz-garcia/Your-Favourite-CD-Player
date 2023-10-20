@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "your-favourite-cd-player",
   "version": "1.0.0",
   "description": "",
