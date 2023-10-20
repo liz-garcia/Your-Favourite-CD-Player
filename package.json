@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/liz-garcia/Your-Favourite-CD-Player/issues"
   },
-  "homepage": "https://github.com/liz-garcia/Your-Favourite-CD-Player#readme",
-  "dependencies": {
-    "node-fetch": "^3.3.2"
-  }
+  "homepage": "https://github.com/liz-garcia/Your-Favourite-CD-Player#readme"
 }
