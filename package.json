@@ -1,0 +1,23 @@
+{
+  "name": "your-favourite-cd-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liz-garcia/Your-Favourite-CD-Player.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liz-garcia/Your-Favourite-CD-Player/issues"
+  },
+  "homepage": "https://github.com/liz-garcia/Your-Favourite-CD-Player#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
