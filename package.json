@@ -1,21 +1,19 @@
 {
-  "type": "module",
-  "name": "your-favourite-cd-player",
+  "name": "lofi-cd-player",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lofi CD-Player App",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liz-garcia/Your-Favourite-CD-Player.git"
+    "url": "git+https://github.com/liz-garcia/Lofi-CD-Player.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/liz-garcia/Your-Favourite-CD-Player/issues"
+    "url": "https://github.com/liz-garcia/Lofi-CD-Player/issues"
   },
-  "homepage": "https://github.com/liz-garcia/Your-Favourite-CD-Player#readme"
+  "homepage": "https://github.com/liz-garcia/Lofi-CD-Player#readme"
 }
