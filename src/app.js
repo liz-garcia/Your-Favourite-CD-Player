@@ -1,31 +1,9 @@
-import { getAccessToken } from "./auth.js";
+import { musicData } from "./data.js";
+import { initWelcomePage } from "./pages/welcomePage.js";
 
-const artistId = "3RAghbUPHnyLCVsmChU4tA"; // Replace with the artist's Spotify ID
+export const loadApp = () => {
+  musicData.currentPlaylistIndex = 0;
+  initWelcomePage();
+};
 
-// Create a function to fetch artist data by ID
-async function getArtistData(artistId) {
-  try {
-    const accessToken = await getAccessToken();
-    const authHeader = `Bearer ${accessToken}`;
-    const apiUrl = `https://api.spotify.com/v1/artists/${artistId}`;
-
-    const response = await fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        Authorization: authHeader,
-      },
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-    } else {
-      console.error("Error:", response.status, response.statusText);
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-}
-
-// Call the function with an artist's Spotify ID
-getArtistData(artistId);
+window.addEventListener("load", loadApp);
