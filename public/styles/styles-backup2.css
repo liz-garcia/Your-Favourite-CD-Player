@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    background-color: white;
+    font-family: 'Inter Tight', sans-serif;
+    color: #2c2c30;
+    font-size: 1rem;
+    display: grid;
+  }
+  
+  /* Main User Interface Element */
+  #user-interface {
+    border: red 10px solid;
+  }
+  
+  /* Music Player UI - mainPage */
+  .music-player-container {
+    border: blue 10px solid;
+    padding: 30px;
+    padding-bottom: 70px;
+    /* height: 100%; */
+    grid-template-areas:
+    "playlists music-player";
+  }
+  
+  /* Music Player Element - musicPlayerView */
+  #music-player {
+    border: red 10px solid;
+    grid-area: music-player;
+  }
+  
+  /* Playlists Button elements - Music Catalog */
+  #playlists {
+    border: greenyellow 10px solid;
+    width: 100%;
+    height: 100%;
+    grid-area: playlists;
+  }
+  
+  #playlists button {
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-color: transparent;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2rem;
+  }
+  
+  .playlist-option img{
+    width: 100%;
+  }
+  
+  .button-text {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  
+  
+  /* Media query */
+  /* @media screen and (max-width: 1250px) {
+    body {
+      display: block;
+    }
+  } */

@@ -23,7 +23,7 @@ export const musicData = {
     },
     {
       artistId: "73aKnLT4O8G2pBEfdlQzrE",
-      playlistName: "Purrple Cat Compilation",
+      playlistName: "Purrple Cat",
       cdImage: "public/assets/images/CDs/disc1.png",
       songs: {
         1: "public/assets/music/2 - Purrple Cat/1 - Storm Clouds.mp3",

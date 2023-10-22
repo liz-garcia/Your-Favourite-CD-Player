@@ -1,8 +1,12 @@
 import { USER_INTERFACE_ID } from "../constants.js";
 import { createPlaylistsElement } from "../views/playlistsView.js";
 import { createMusicPlayerElement } from "../views/musicPlayerView.js";
+import { musicData } from "../data.js";
 
 export const initMusicPlayer = () => {
+  const currentPlaylistIndex = 0;
+  const currentPlaylist = musicData.playlists[currentPlaylistIndex]
+
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = "";
 
@@ -15,7 +19,7 @@ export const initMusicPlayer = () => {
   musicPlayerContainer.appendChild(playlistsElement);
 
   //Append music player element
-  const musicPlayerElement = createMusicPlayerElement();
+  const musicPlayerElement = createMusicPlayerElement(currentPlaylist);
   musicPlayerContainer.appendChild(musicPlayerElement);
 
 };

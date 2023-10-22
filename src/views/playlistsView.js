@@ -22,7 +22,7 @@ const createButtonElement = (playlistObject) => {
   const cdCaseImage = "public/assets/images/cd-case.png";
 
   buttonElement.innerHTML = String.raw`
-    <div class="button-wrapper">
+    <div class="content-wrapper">
         <img src="${cdCaseImage}" alt="${playlistObject.playlistName}" />
         <span class="button-text">${playlistObject.playlistName}</span>
     </div>
