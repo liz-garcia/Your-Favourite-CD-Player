@@ -53,5 +53,33 @@ export const musicData = {
         9: "public/assets/music/3 - Ghostrifter Official/9 - Hope [Emotional Soundtrack].mp3",
       },
     },
+    {
+      artistId: "4SYTMJWp1zw7CeOqO6Nk2K",
+      playlistName: "CMT8 OCT2023",
+      songs: {
+        1: "public/assets/music/4 - CMT8/1 - Sleepy cat.mp3",
+        2: "public/assets/music/4 - CMT8/2 - Empty mind.mp3",
+        3: "public/assets/music/4 - CMT8/3 - Go home.mp3",
+        4: "public/assets/music/4 - CMT8/4 - Untitled.mp3",
+        5: "public/assets/music/4 - CMT8/5 - Dripping.mp3",
+        6: "public/assets/music/4 - CMT8/6 - Night Coffeeshop.mp3",
+        7: "public/assets/music/4 - CMT8/7 - Wait.mp3",
+        8: "public/assets/music/4 - CMT8/8 - In the room (when the rain pouring).mp3",
+      },
+    },
+    {
+      artistId: "5VWxPzSlM3bEky01nXffoN",
+      playlistName: "Oleg SoulProdMusic",
+      songs: {
+        1: "public/assets/music/5 - SoulProdMusic/1 - Aesthetics.mp3",
+        2: "public/assets/music/5 - SoulProdMusic/2 - Oktober [Lofi Jazzy beat].mp3",
+        3: "public/assets/music/5 - SoulProdMusic/3 - Old clock [chill lofi beats].mp3",
+        4: "public/assets/music/5 - SoulProdMusic/4 - Autumn.mp3",
+        5: "public/assets/music/5 - SoulProdMusic/5 - Mysterious forest [creepy lofi halloween].mp3",
+        6: "public/assets/music/5 - SoulProdMusic/6 - Sweet Breeze.mp3",
+        7: "public/assets/music/5 - SoulProdMusic/7 - The Floop.mp3",
+        8: "public/assets/music/5 - SoulProdMusic/8 - Move on.mp3",
+      },
+    },
   ],
 };

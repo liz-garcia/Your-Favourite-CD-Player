@@ -1,4 +1,4 @@
-import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } from "./constants.js";
+import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } from "../constants.js";
 
 export async function getAccessToken() {
   const authHeaders = {
