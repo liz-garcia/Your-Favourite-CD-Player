@@ -4,6 +4,7 @@ export const musicData = {
     {
       artistId: "4Zg0XlpXyAa4TJVSzVNfZF",
       playlistName: "FASSounds Mix",
+      cdImage: "public/assets/images/CDs/disc1.png",
       tracks: {
         1: "public/assets/music/1 - FASSounds/1 - Lofi Study.mp3",
         2: "public/assets/music/1 - FASSounds/2 - Good Night.mp3",
@@ -23,6 +24,7 @@ export const musicData = {
     {
       artistId: "73aKnLT4O8G2pBEfdlQzrE",
       playlistName: "Purrple Cat Compilation",
+      cdImage: "public/assets/images/CDs/disc1.png",
       songs: {
         1: "public/assets/music/2 - Purrple Cat/1 - Storm Clouds.mp3",
         2: "public/assets/music/2 - Purrple Cat/2 - Journey's End.mp3",
@@ -41,6 +43,7 @@ export const musicData = {
     {
       artistId: "1mIePRs1ixMW0gTaTSbX2p",
       playlistName: "Ghostrifter Official!",
+      cdImage: "public/assets/images/CDs/disc1.png",
       songs: {
         1: "public/assets/music/3 - Ghostrifter Official/1 - Morning Routine [Lofi Study Music].mp3",
         2: "public/assets/music/3 - Ghostrifter Official/2 - Purple Dream.mp3",
@@ -56,6 +59,7 @@ export const musicData = {
     {
       artistId: "4SYTMJWp1zw7CeOqO6Nk2K",
       playlistName: "CMT8 OCT2023",
+      cdImage: "public/assets/images/CDs/disc1.png",
       songs: {
         1: "public/assets/music/4 - CMT8/1 - Sleepy cat.mp3",
         2: "public/assets/music/4 - CMT8/2 - Empty mind.mp3",
@@ -70,6 +74,7 @@ export const musicData = {
     {
       artistId: "5VWxPzSlM3bEky01nXffoN",
       playlistName: "Oleg SoulProdMusic",
+      cdImage: "public/assets/images/CDs/disc1.png",
       songs: {
         1: "public/assets/music/5 - SoulProdMusic/1 - Aesthetics.mp3",
         2: "public/assets/music/5 - SoulProdMusic/2 - Oktober [Lofi Jazzy beat].mp3",
