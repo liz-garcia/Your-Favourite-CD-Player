@@ -52,7 +52,7 @@ body {
 }
 
 /* Music Player Element - musicPlayerView */
-#music-player {
+#musicPlayer {
   border: red 10px solid;
   grid-area: music-player;
   width: 90%;
