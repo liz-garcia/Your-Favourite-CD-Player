@@ -13,34 +13,126 @@ body {
   font-family: 'Inter Tight', sans-serif;
   color: #2c2c30;
   font-size: 1rem;
+  border: black 10px solid;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
+/* .centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
 
 /* Main User Interface Element */
 #user-interface {
+  /* top: 2%; */
+  position: absolute;
   border: red 10px solid;
+  /* height: fit-content; */
+  height: 100%;
 }
 
 /* Music Player UI - mainPage */
 .music-player-container {
   border: blue 10px solid;
-  padding: 30px;
+  padding: 2rem 10rem;
   /* padding-bottom: 70px; */
-  height: 100vh;
+  /* height: 100vh; */
   display: grid;
   grid-template-areas:
   "playlists music-player music-player";
+  gap: 20px;
+  height: fit-content;
+  /* height: 100%; */
 }
 
 /* Music Player Element - musicPlayerView */
 #music-player {
   border: red 10px solid;
   grid-area: music-player;
+  width: 95%;
+  /* height: 100%; */
+  height: fit-content;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+}
+
+#cd-player-wrapper {
+  width: 100%;
+}
+
+#cd-player-wrapper img {
+  width: 100%;
+}
+
+/* Playback Area */
+#playback {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#playback-bg-wrapper {
+  /* border: purple 10px solid; */
+  width: 100%;
+}
+
+#playback-bg-wrapper img {
+  width: 100%
+}
+
+#playlist-name {
+  position: absolute;
+  right: 20px;
+  text-align: right;
+  padding-top: 5px;
+  /* font-size: 2rem; */
+}
+
+#artist-info-button {
+  background-color: #2C2C2C;
+  font-weight: 600;
+  font-style: italic;
+  color: white;
+  padding: 5px;
+  border-style: none;
+}
+
+/* Playback Buttons */
+#playback-buttons {
+  padding-top: 5px;
+  padding-left: 20px;
+  position: absolute;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#playback-buttons img {
+  height: 100%;
+}
+
+#playback-buttons .small {
+  height: 80%;
 }
 
 /* Playlists Button elements - Music Catalog */
 #playlists {
   border: greenyellow 10px solid;
   grid-area: playlists;
+  width: 100%;
+  /* height: 100%; */
+  height: fit-content;
+  align-self: center;
 }
 
 #playlists button {
@@ -55,22 +147,49 @@ body {
   width: 100%;
 }
 
+.content-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  /* align-items: center; */
+  /* justify-items: center; */
+}
+
 .button-text {
   position: absolute;
   text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 1%;
   color: black;
-  border: orange 10px solid;
+  border: orange 2px solid;
 }
 
 
+/* Logo */
+#logo {
+  border: pink 10px solid;
+  text-align: center;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+#logo span {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 5rem;
+}
+
 /* Media query */
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
+  .music-player-container {
+    padding: 2rem 5rem;
+  }
+} */
+
+@media screen and (max-width: 720px) {
   .music-player-container {
     grid-template-areas:
-    "playlists"
-    "music-player";
+    "music-player"
+    "playlists";
   }
 }

@@ -5,6 +5,9 @@ export const createPlaylistsElement = () => {
   const element = document.createElement("div");
   element.id = "playlists";
 
+  const logo = createLogoElement();
+  element.appendChild(logo);
+
   const availablePlaylists = musicData.playlists;
   availablePlaylists.forEach((playlist) => {
     const playlistButton = createButtonElement(playlist);
@@ -23,10 +26,20 @@ const createButtonElement = (playlistObject) => {
 
   buttonElement.innerHTML = String.raw`
     <div class="content-wrapper">
-        <img src="${cdCaseImage}" alt="${playlistObject.playlistName}" />
         <span class="button-text">${playlistObject.playlistName}</span>
+        <img src="${cdCaseImage}" alt="${playlistObject.playlistName}" />
     </div>
       `;
 
   return buttonElement;
+};
+
+const createLogoElement = () => {
+  const logoElement = document.createElement("h1");
+  logoElement.classList.add("logo");
+  logoElement.id = "logo";
+  logoElement.innerHTML = String.raw`
+    <span>Lofi</span> CD Player`;
+
+  return logoElement;
 };
