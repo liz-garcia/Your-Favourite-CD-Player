@@ -42,23 +42,24 @@ body {
   border: blue 10px solid;
   padding: 2rem 10rem;
   /* padding-bottom: 70px; */
-  /* height: 100vh; */
   display: grid;
   grid-template-areas:
   "playlists music-player music-player";
   gap: 20px;
-  height: fit-content;
-  /* height: 100%; */
+  /* height: fit-content; */
+  /* height: 100vh; */
+  height: 100%;
 }
 
 /* Music Player Element - musicPlayerView */
 #music-player {
   border: red 10px solid;
   grid-area: music-player;
-  width: 95%;
-  /* height: 100%; */
+  width: 85%;
+  /* height: 90%; */
   height: fit-content;
   display: flex;
+  align-self: center;
   justify-self: center;
   flex-direction: column;
   justify-items: center;
