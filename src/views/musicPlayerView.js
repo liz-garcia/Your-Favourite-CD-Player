@@ -3,7 +3,7 @@
 // Create the welcome screen
 export const createMusicPlayerElement = (playlist) => {
   const element = document.createElement("div");
-  element.id = "music-player";
+  element.id = "musicPlayer";
 
   // const cdPlayerImage = "public/assets/images/cd-player.png";
   const playButtonImg = "public/assets/images/play.png";
