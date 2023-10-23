@@ -1,6 +1,7 @@
 import { USER_INTERFACE_ID } from "../constants.js";
 import { createPlaylistsElement } from "../views/playlistsView.js";
 import { createMusicPlayerElement } from "../views/musicPlayerView.js";
+import { getArtistData } from "../api/getArtistData.js";
 import { musicData } from "../data.js";
 
 export const initMusicPlayer = () => {
@@ -22,7 +23,24 @@ export const initMusicPlayer = () => {
   const musicPlayerElement = createMusicPlayerElement(currentPlaylist);
   musicPlayerContainer.appendChild(musicPlayerElement);
 
-  //TODO Assign DOMlisteners to Playlists Buttons
+  //TODO Artist ID const
+  const currentArtistId = currentPlaylist.artistId;
+
+  //TODO Assign DOMListener to GetArtistInfo Button
+  const artistInfoButton = document.getElementById("artist-info-button");
+  artistInfoButton.addEventListener("click", () => {
+    async function getArtistInfo() {
+      try {
+        const artistInfo = await getArtistData(currentArtistId);
+        console.log(artistInfo);
+      } catch (error) {
+        console.error("Error:", error);
+      };
+    };
+    getArtistInfo();
+  });
+
+  //Assign DOMlistener to Playlists Buttons
   const playlistsButtons = [...document.getElementsByClassName("playlist-option")];
   const availablePlaylists = musicData.playlists;
 
@@ -39,6 +57,21 @@ export const initMusicPlayer = () => {
           
           const newMusicPlayerElement = createMusicPlayerElement(newCurrentPlaylist);
           musicPlayerContainer.appendChild(newMusicPlayerElement);
+
+          // Get Artist Info Button!
+          const newCurrentArtistId = newCurrentPlaylist.artistId;
+          const artistInfoButton = document.getElementById("artist-info-button");
+          artistInfoButton.addEventListener("click", () => {
+            async function getArtistInfo() {
+              try {
+                const newArtistInfo = await getArtistData(newCurrentArtistId);
+                console.log(newArtistInfo);
+              } catch (error) {
+                console.error("Error:", error);
+              };
+            };
+            getArtistInfo();
+          });
         }
       })
     });

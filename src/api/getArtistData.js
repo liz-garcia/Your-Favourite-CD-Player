@@ -1,9 +1,10 @@
 import { getAccessToken } from "./auth.js";
 
-const artistId = "5VWxPzSlM3bEky01nXffoN"; // Replace with the artist's Spotify ID
+// const artistId = "5VWxPzSlM3bEky01nXffoN";
+// Replace with the artist's Spotify ID
 
 // Create a function to fetch artist data by ID
-async function getArtistData(artistId) {
+export async function getArtistData(artistId) {
   try {
     const accessToken = await getAccessToken();
     const authHeader = `Bearer ${accessToken}`;
@@ -18,7 +19,6 @@ async function getArtistData(artistId) {
 
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       return data;
     } else {
       console.error("Error:", response.status, response.statusText);
@@ -26,7 +26,7 @@ async function getArtistData(artistId) {
   } catch (error) {
     console.error("Error:", error);
   }
-}
+};
 
 // Call the function with an artist's Spotify ID
-getArtistData(artistId);
+// getArtistData(artistId);
