@@ -19,6 +19,8 @@ export async function getArtistData(artistId) {
 
     if (response.ok) {
       const data = await response.json();
+      //TODO Remove later!
+      // console.log(data);
       return data;
     } else {
       console.error("Error:", response.status, response.statusText);

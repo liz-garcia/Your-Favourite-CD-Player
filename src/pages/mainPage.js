@@ -1,4 +1,5 @@
 import { USER_INTERFACE_ID } from "../constants.js";
+import { getPlaylist, updateCurrentPlaylistIndex, removeMusicPlayer } from "../functions.js";
 import { createPlaylistsElement } from "../views/playlistsView.js";
 import { createMusicPlayerElement } from "../views/musicPlayerView.js";
 import { getArtistData } from "../api/getArtistData.js";
@@ -23,62 +24,25 @@ export const initMusicPlayer = () => {
   const musicPlayerElement = createMusicPlayerElement(currentPlaylist);
   musicPlayerContainer.appendChild(musicPlayerElement);
 
-  //TODO Artist ID const
-  const currentArtistId = currentPlaylist.artistId;
-
-  //TODO Assign DOMListener to GetArtistInfo Button
-  const artistInfoButton = document.getElementById("artist-info-button");
-  artistInfoButton.addEventListener("click", () => {
-    async function getArtistInfo() {
-      try {
-        const artistInfo = await getArtistData(currentArtistId);
-        console.log(artistInfo);
-      } catch (error) {
-        console.error("Error:", error);
-      };
-    };
-    getArtistInfo();
-  });
-
-  //Assign DOMlistener to Playlists Buttons
-  const playlistsButtons = [...document.getElementsByClassName("playlist-option")];
-  const availablePlaylists = musicData.playlists;
-
+  //Enable PlaylistsButtons
+  const playlistsButtons = [
+    ...document.getElementsByClassName("playlist-option"),
+  ];
   playlistsButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      availablePlaylists.filter((playlist) => {
-        if (playlist.playlistName === button.id) {
-          // console.log(playlist.playlistName);
-          musicData.currentPlaylistIndex = playlist.index;
-          const newCurrentPlaylist = availablePlaylists[playlist.index];
-          
-          const musicPlayer = document.getElementById("musicPlayer");
-          musicPlayer.remove();
-          
-          const newMusicPlayerElement = createMusicPlayerElement(newCurrentPlaylist);
-          musicPlayerContainer.appendChild(newMusicPlayerElement);
-
-          // Get Artist Info Button!
-          const newCurrentArtistId = newCurrentPlaylist.artistId;
-          const artistInfoButton = document.getElementById("artist-info-button");
-          artistInfoButton.addEventListener("click", () => {
-            async function getArtistInfo() {
-              try {
-                const newArtistInfo = await getArtistData(newCurrentArtistId);
-                console.log(newArtistInfo);
-              } catch (error) {
-                console.error("Error:", error);
-              };
-            };
-            getArtistInfo();
-          });
-        }
-      })
+      const selectedPlaylist = getPlaylist(button);
+      updateCurrentPlaylistIndex(selectedPlaylist);
+      removeMusicPlayer();
+      const newPlayer = createMusicPlayerElement(selectedPlaylist);
+      musicPlayerContainer.appendChild(newPlayer);
     });
   });
+
 };
 
 // TODO Evaluate if this is working as expected?
 document.addEventListener("DOMContentLoaded", () => {
   initMusicPlayer();
 });
+
+
