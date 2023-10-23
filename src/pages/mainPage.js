@@ -4,8 +4,8 @@ import { createMusicPlayerElement } from "../views/musicPlayerView.js";
 import { musicData } from "../data.js";
 
 export const initMusicPlayer = () => {
-  const currentPlaylistIndex = 0;
-  const currentPlaylist = musicData.playlists[currentPlaylistIndex]
+  musicData.currentPlaylistIndex = 0;
+  const currentPlaylist = musicData.playlists[musicData.currentPlaylistIndex];
 
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = "";
@@ -24,6 +24,7 @@ export const initMusicPlayer = () => {
 
 };
 
+// TODO Evaluate if this is working as expected?
 document.addEventListener("DOMContentLoaded", () => {
   initMusicPlayer();
 });

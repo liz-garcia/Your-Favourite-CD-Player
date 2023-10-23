@@ -28,8 +28,7 @@ const createButtonElement = (playlistObject) => {
     <div class="content-wrapper">
         <span class="button-text">${playlistObject.playlistName}</span>
         <img src="${cdCaseImage}" alt="${playlistObject.playlistName}" />
-    </div>
-      `;
+    </div>`;
 
   return buttonElement;
 };

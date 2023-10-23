@@ -27,7 +27,7 @@ export const createMusicPlayerElement = (playlist) => {
           <img src="${pauseButtonImg}" alt="Pause" />
           <img class="small" src="${nextButtonImg}" alt="Next track" />
       </div>
-      <h2 id="playlist-name">${playlist.playlistName}</h2>
+      <h2 id="playlistName">${playlist.playlistName}</h2>
     </div>
     <button id="artist-info-button">Get Artist info</button>
   `;

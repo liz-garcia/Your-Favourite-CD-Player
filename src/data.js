@@ -2,6 +2,7 @@ export const musicData = {
   currentPlaylistIndex: 0,
   playlists: [
     {
+      index: 0,
       artistId: "4Zg0XlpXyAa4TJVSzVNfZF",
       playlistName: "FASSounds Mix",
       cdImage: "public/assets/images/CDs/disc1.png",
@@ -22,9 +23,10 @@ export const musicData = {
       },
     },
     {
+      index: 1,
       artistId: "73aKnLT4O8G2pBEfdlQzrE",
       playlistName: "Purrple Cat",
-      cdImage: "public/assets/images/CDs/disc1.png",
+      cdImage: "public/assets/images/CDs/disc2.png",
       songs: {
         1: "public/assets/music/2 - Purrple Cat/1 - Storm Clouds.mp3",
         2: "public/assets/music/2 - Purrple Cat/2 - Journey's End.mp3",
@@ -41,6 +43,7 @@ export const musicData = {
       },
     },
     {
+      index: 2,
       artistId: "1mIePRs1ixMW0gTaTSbX2p",
       playlistName: "Ghostrifter Official!",
       cdImage: "public/assets/images/CDs/disc1.png",
@@ -57,6 +60,7 @@ export const musicData = {
       },
     },
     {
+      index: 3,
       artistId: "4SYTMJWp1zw7CeOqO6Nk2K",
       playlistName: "CMT8 OCT2023",
       cdImage: "public/assets/images/CDs/disc1.png",
@@ -72,6 +76,7 @@ export const musicData = {
       },
     },
     {
+      index: 4,
       artistId: "5VWxPzSlM3bEky01nXffoN",
       playlistName: "Oleg SoulProdMusic",
       cdImage: "public/assets/images/CDs/disc1.png",

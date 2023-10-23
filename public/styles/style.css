@@ -55,8 +55,7 @@ body {
 #music-player {
   border: red 10px solid;
   grid-area: music-player;
-  width: 85%;
-  /* height: 90%; */
+  width: 90%;
   height: fit-content;
   display: flex;
   align-self: center;
@@ -90,7 +89,7 @@ body {
   width: 100%
 }
 
-#playlist-name {
+#playlistName {
   position: absolute;
   right: 20px;
   text-align: right;
@@ -131,7 +130,6 @@ body {
   border: greenyellow 10px solid;
   grid-area: playlists;
   width: 100%;
-  /* height: 100%; */
   height: fit-content;
   align-self: center;
 }
