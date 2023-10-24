@@ -48,6 +48,8 @@ export function filterArtistInfo(infoObject) {
 
   // Followers
   const followers = infoObject.followers.total;
+  console.log(followers);
+  console.log(infoObject);
 
   // Genres
   let genres = infoObject.genres.join(", ");
