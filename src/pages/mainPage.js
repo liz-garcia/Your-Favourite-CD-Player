@@ -1,6 +1,7 @@
 import { createPlaylistsElement } from "../views/playlistsView.js";
 import { createMusicPlayerElement } from "../views/musicPlayerView.js";
 import { enableArtistInfoButton, createMusicPlayerContainer } from "../functions.js";
+import { createAudio } from "../effects.js";
 import { musicData } from "../data.js";
 
 //Init Music Player
@@ -29,12 +30,16 @@ export const initMusicPlayer = () => {
     ...document.getElementsByClassName("playlist-option"),
   ];
 
+  // let selectedPlaylist = null;
+
   playlistsButtons.forEach((button) => {
     button.addEventListener("click", () => {
       availablePlaylists.filter((playlist) => {
         if (playlist.playlistName === button.id) {
           musicData.currentPlaylistIndex = playlist.index;
           const newCurrentPlaylist = availablePlaylists[playlist.index];
+
+          // selectedPlaylist = newCurrentPlaylist;
 
           const previousMusicPlayerElement = document.getElementById("musicPlayer");
           previousMusicPlayerElement.remove();
@@ -43,6 +48,15 @@ export const initMusicPlayer = () => {
             createMusicPlayerElement(newCurrentPlaylist);
           musicPlayerContainer.appendChild(newMusicPlayerElement);
 
+          createAudio(`${playlist.tracks.track}`).play();
+
+          // const audio = createAudio(`${playlist.tracks.track}`);
+          // audio.play();
+
+          // if (selectedPlaylist !== playlist) {
+          //   audio.pause();
+          // }
+
           enableArtistInfoButton(newCurrentPlaylist);
         }
       });
@@ -50,11 +64,6 @@ export const initMusicPlayer = () => {
   });
 };
 
-// TODO Evaluate if this is working as expected?
 document.addEventListener("DOMContentLoaded", () => {
   initMusicPlayer();
 });
-
-// TODO Assign EventListeners to PlaylistsButtons
-
-// TODO Get Artist Info function

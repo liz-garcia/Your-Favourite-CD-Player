@@ -1,5 +1,3 @@
-// import { musicData } from "../data.js";
-
 // Create the welcome screen
 export const createMusicPlayerElement = (playlist) => {
   const element = document.createElement("div");

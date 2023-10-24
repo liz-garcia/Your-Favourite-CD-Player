@@ -1,13 +1,3 @@
-//TODO Work in progress...
-// const filteredObject = {
-//   name: `${name}`,
-//   imgUrl: `${imgUrl}`,
-//   spotifyUrl: `${spotifyUrl}`,
-//   popularity: `${popularityDescription}`,
-//   followers: `${followers}`,
-//   genres: `${genres}`,
-// };
-
 export const createArtistInfoElement = (artistInfoObject) => {
     const element = document.createElement("div");
     element.classList.add("popup");

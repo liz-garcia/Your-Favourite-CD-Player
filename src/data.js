@@ -7,7 +7,7 @@ export const musicData = {
       playlistName: "FASSounds Mix",
       cdImage: "public/assets/images/CDs/disc1.png",
       tracks: {
-        1: "public/assets/music/1 - FASSounds/1 - Lofi Study.mp3",
+        track: "public/assets/music/1 - FASSounds/1 - Lofi Study.mp3",
         2: "public/assets/music/1 - FASSounds/2 - Good Night.mp3",
         3: "public/assets/music/1 - FASSounds/3 - Jazz Café.mp3",
         4: "public/assets/music/1 - FASSounds/4 - Coding Night.mp3",
@@ -28,7 +28,7 @@ export const musicData = {
       playlistName: "Purrple Cat",
       cdImage: "public/assets/images/CDs/disc2.png",
       tracks: {
-        1: "public/assets/music/2 - Purrple Cat/1 - Storm Clouds.mp3",
+        track: "public/assets/music/2 - Purrple Cat/1 - Storm Clouds.mp3",
         2: "public/assets/music/2 - Purrple Cat/2 - Journey's End.mp3",
         3: "public/assets/music/2 - Purrple Cat/3 - Signs of Life.mp3",
         4: "public/assets/music/2 - Purrple Cat/4 - Sugar Coat.mp3",
@@ -48,7 +48,7 @@ export const musicData = {
       playlistName: "Ghostrifter Official!",
       cdImage: "public/assets/images/CDs/disc3.png",
       tracks: {
-        1: "public/assets/music/3 - Ghostrifter Official/1 - Morning Routine [Lofi Study Music].mp3",
+        track: "public/assets/music/3 - Ghostrifter Official/1 - Morning Routine [Lofi Study Music].mp3",
         2: "public/assets/music/3 - Ghostrifter Official/2 - Purple Dream.mp3",
         3: "public/assets/music/3 - Ghostrifter Official/3 - Downtown Glow (Ghostrifter Official & Devyzed).mp3",
         4: "public/assets/music/3 - Ghostrifter Official/4 - On My Way [Lofi Study Music].mp3",
@@ -65,7 +65,7 @@ export const musicData = {
       playlistName: "CMT8 OCT2023",
       cdImage: "public/assets/images/CDs/disc4.png",
       tracks: {
-        1: "public/assets/music/4 - CMT8/1 - Sleepy cat.mp3",
+        track: "public/assets/music/4 - CMT8/1 - Sleepy cat.mp3",
         2: "public/assets/music/4 - CMT8/2 - Empty mind.mp3",
         3: "public/assets/music/4 - CMT8/3 - Go home.mp3",
         4: "public/assets/music/4 - CMT8/4 - Untitled.mp3",
@@ -81,7 +81,7 @@ export const musicData = {
       playlistName: "Oleg SoulProdMusic",
       cdImage: "public/assets/images/CDs/disc5.png",
       tracks: {
-        1: "public/assets/music/5 - SoulProdMusic/1 - Aesthetics.mp3",
+        track: "public/assets/music/5 - SoulProdMusic/1 - Aesthetics.mp3",
         2: "public/assets/music/5 - SoulProdMusic/2 - Oktober [Lofi Jazzy beat].mp3",
         3: "public/assets/music/5 - SoulProdMusic/3 - Old clock [chill lofi beats].mp3",
         4: "public/assets/music/5 - SoulProdMusic/4 - Autumn.mp3",

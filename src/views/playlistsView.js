@@ -30,12 +30,6 @@ const createButtonElement = (playlistObject) => {
         <img src="${cdCaseImage}" alt="${playlistObject.playlistName}" />
     </div>`;
 
-  //TODO Assign DOMlisteners to Playlists Buttons
-  // buttonElement.addEventListener("click", () => {
-  //   musicData.currentPlaylistIndex = playlist.index;
-  //   console.log(playlist.index);
-  // });
-
   return buttonElement;
 };
 

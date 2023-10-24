@@ -29,7 +29,6 @@ export async function getArtistInfo(id) {
 };
 
 export function filterArtistInfo(infoObject) {
-  // TODO This function should return a new object
   // Name
   const name = infoObject.name;
 
