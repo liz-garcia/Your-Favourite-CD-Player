@@ -61,7 +61,7 @@ export function filterArtistInfo(infoObject) {
     name: `${name}`,
     imgUrl: `${imgUrl}`,
     spotifyUrl: `${spotifyUrl}`,
-    popularity: `${popularity}`,
+    popularity: `${popularityDescription}`,
     followers: `${followers}`,
     genres: `${genres}`,
   };
