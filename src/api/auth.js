@@ -11,7 +11,7 @@ export async function getAccessToken() {
   authData.append("client_secret", SPOTIFY_CLIENT_SECRET);
 
   try {
-    const response = await fetch("https://accounts.spotify.com/api/tokens", {
+    const response = await fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
       headers: authHeaders,
       body: authData,

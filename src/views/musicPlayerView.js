@@ -21,12 +21,6 @@ export const createMusicPlayerElement = (playlist) => {
       <div id="playback-bg-wrapper" class="img-wrapper">
           <img src="${playbackBgImg}" alt="CD player" />
       </div>
-      <div id="playback-buttons">
-          <img class="small" src="${previousButtonImg}" alt="Previous track" />
-          <img src="${playButtonImg}" alt="Play" />
-          <img src="${pauseButtonImg}" alt="Pause" />
-          <img class="small" src="${nextButtonImg}" alt="Next track" />
-      </div>
       <h2 id="playlistName">${playlist.playlistName}</h2>
     </div>
     <button id="artist-info-button">Get Artist info</button>
