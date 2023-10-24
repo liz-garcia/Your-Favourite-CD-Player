@@ -1,3 +1,5 @@
+//TODO Work in progress...
+
 export const createArtistInfoElement = (artistData) => {
     const element = document.createElement("div");
     element.id = "artistInfo";

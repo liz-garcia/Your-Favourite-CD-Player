@@ -1,5 +1,17 @@
 // import { musicData } from "./data.js";
+import { USER_INTERFACE_ID } from "./constants.js";
 import { getArtistData } from "../src/api/getArtistData.js";
+
+// For mainPage - initMusicPlayer
+export const createMusicPlayerContainer = () => {
+  const userInterface = document.getElementById(USER_INTERFACE_ID);
+  userInterface.innerHTML = "";
+  const musicPlayerContainer = document.createElement("div");
+  musicPlayerContainer.classList.add("music-player-container");
+  userInterface.appendChild(musicPlayerContainer);
+
+  return musicPlayerContainer;
+}
 
 // For the Get Artist Info Button
 export async function getArtistInfo(id) {
@@ -48,4 +60,20 @@ export function displayArtistInfo(infoObject) {
   }
   console.log(genres);
 };
+
+export function enableArtistInfoButton (currentPlaylist) {
+  const currentArtistId = currentPlaylist.artistId;
+  const artistInfoButton =
+    document.getElementById("artist-info-button");
+  artistInfoButton.addEventListener("click", async () => {
+    try {
+      const newArtistInfo = await getArtistInfo(currentArtistId);
+      console.log(`This is the info:`, newArtistInfo);
+
+      displayArtistInfo(newArtistInfo);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  });
+}
 
