@@ -1,26 +1,28 @@
 //TODO Work in progress...
+// const filteredObject = {
+//   name: `${name}`,
+//   imgUrl: `${imgUrl}`,
+//   spotifyUrl: `${spotifyUrl}`,
+//   popularity: `${popularityDescription}`,
+//   followers: `${followers}`,
+//   genres: `${genres}`,
+// };
 
-export const createArtistInfoElement = (artistData) => {
+export const createArtistInfoElement = (artistInfoObject) => {
     const element = document.createElement("div");
-    element.id = "artistInfo";
+    element.classList.add("popup");
+    element.id = "popup";
 
     element.innerHTML = String.raw`
-    <div id="cd-player-wrapper" class="img-wrapper">
-        <img src="${cdImage}" alt="CD player" />
-    </div>
-    <div id="playback">
-      <div id="playback-bg-wrapper" class="img-wrapper">
-          <img src="${playbackBgImg}" alt="CD player" />
+      <div class="popup-content">
+          <span class="close" id="closePopup">&times;</span>
+          <img src="${artistInfoObject.imgUrl}" alt="${artistInfoObject.name}">
+          <h2>${artistInfoObject.name}</h2>
+          <p><span class="bold">Genres:</span> ${artistInfoObject.genres}</p>
+          <p><span class="bold">Popularity:</span> ${artistInfoObject.popularity}</p>
+          <p><span class="bold">Followers:</span> ${artistInfoObject.followers}</p>
+          <p><a target="_blank" href="${artistInfoObject.spotifyUrl}">Spotify Account</a></p>
       </div>
-      <div id="playback-buttons">
-          <img class="small" src="${previousButtonImg}" alt="Previous track" />
-          <img src="${playButtonImg}" alt="Play" />
-          <img src="${pauseButtonImg}" alt="Pause" />
-          <img class="small" src="${nextButtonImg}" alt="Next track" />
-      </div>
-      <h2 id="playlistName">${playlist.playlistName}</h2>
-    </div>
-    <button id="artist-info-button">Get Artist info</button>
   `;
   return element;
 };

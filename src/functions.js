@@ -1,6 +1,7 @@
 // import { musicData } from "./data.js";
 import { USER_INTERFACE_ID } from "./constants.js";
 import { getArtistData } from "../src/api/getArtistData.js";
+import { createArtistInfoElement } from "../src/views/artistInfoView.js";
 
 // For mainPage - initMusicPlayer
 export const createMusicPlayerContainer = () => {
@@ -23,14 +24,13 @@ export async function getArtistInfo(id) {
   }
 };
 
-export function displayArtistInfo(infoObject) {
+export function filterArtistInfo(infoObject) {
+  // TODO This function should return a new object
   // Name
   const name = infoObject.name;
-  console.log(`Name: ${name}`);
 
   // Image
   const imgUrl = infoObject["images"]["0"]["url"];
-  console.log(imgUrl);
 
   // Popularity
   const popularity = infoObject.popularity;
@@ -42,35 +42,60 @@ export function displayArtistInfo(infoObject) {
   } else {
     popularityDescription = "Emerging Artist";
   }
-  console.log(`Popularity: ${popularityDescription}`);
 
   // Spotify
   const spotifyUrl = infoObject.external_urls.spotify;
-  console.log(spotifyUrl);
 
   // Followers
   const followers = infoObject.followers.total;
-  console.log(followers);
 
   // Genres
-  let genres = infoObject.genres.join(', ');
+  let genres = infoObject.genres.join(", ");
   if (infoObject.genres.length === 0) {
-    const defaultGenre = 'lofi';
+    const defaultGenre = "lofi";
     genres = defaultGenre;
   }
-  console.log(genres);
+
+  //filteredObject
+  const filteredObject = {
+    name: `${name}`,
+    imgUrl: `${imgUrl}`,
+    spotifyUrl: `${spotifyUrl}`,
+    popularity: `${popularityDescription}`,
+    followers: `${followers}`,
+    genres: `${genres}`,
+  };
+
+  return filteredObject;
 };
 
 export function enableArtistInfoButton (currentPlaylist) {
   const currentArtistId = currentPlaylist.artistId;
-  const artistInfoButton =
-    document.getElementById("artist-info-button");
+  const artistInfoButton = document.getElementById("artist-info-button");
+  
   artistInfoButton.addEventListener("click", async () => {
     try {
       const newArtistInfo = await getArtistInfo(currentArtistId);
-      console.log(`This is the info:`, newArtistInfo);
 
-      displayArtistInfo(newArtistInfo);
+      const newArtistInfoObject = filterArtistInfo(newArtistInfo);
+      console.log(newArtistInfoObject.name);
+      const newArtistInfoElement =createArtistInfoElement(newArtistInfoObject);
+            
+      const userInterface = document.getElementById(USER_INTERFACE_ID);
+      userInterface.appendChild(newArtistInfoElement);
+      // const body = document.querySelector("body");
+      // body.appendChild(newArtistInfoElement);
+      
+      // Show Popup and Close Popup
+      const popup = document.getElementById('popup');
+      popup.style.display = 'block';
+      
+      const closePopupButton = document.getElementById('closePopup');
+      closePopupButton.addEventListener('click', () => {
+          popup.style.display = 'none';
+          popup.remove();
+      });
+
     } catch (error) {
       console.error("Error:", error);
     }
