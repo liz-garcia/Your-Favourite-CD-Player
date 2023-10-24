@@ -13,50 +13,62 @@ body {
   font-family: 'Inter Tight', sans-serif;
   color: #2c2c30;
   font-size: 1rem;
-  border: black 10px solid;
   height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
 }
 
-/* .centered {
+/* Welcome View */
+#welcome button {
+  background-color: #2C2C2C;
+  border-style: none;
+  border: solid #2C2C2C 0.5%;
+  border-radius: 2px;
+  font-weight: 600;
+  font-style: italic;
+  color: white;
+  padding: 5px;
+  margin: 15px;
+  font-size: 1rem;
+}
+
+#welcome button:hover {
+  background-color: #29a7d1;
+  border: solid #29a7d1 0.5%;
+  cursor: pointer;
+}
+
+#welcome h1 {
+  margin: 10px;
+}
+
+.centered {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-} */
+}
 
 /* Main User Interface Element */
 #user-interface {
-  /* top: 2%; */
   position: absolute;
-  border: red 10px solid;
-  /* height: fit-content; */
   height: 100%;
 }
 
 /* Music Player UI - mainPage */
 .music-player-container {
-  border: blue 10px solid;
   padding: 2rem 10rem;
-  /* padding-bottom: 70px; */
   display: grid;
   grid-template-areas:
   "playlists music-player music-player";
-  /* grid-template-areas:
-  "music-player"
-  "playlists"; */
   gap: 5px;
-  /* height: fit-content; */
-  /* height: 100vh; */
   height: 100%;
 }
 
 /* Music Player Element - musicPlayerView */
 #musicPlayer {
-  border: red 10px solid;
   grid-area: music-player;
   width: 85%;
   height: fit-content;
@@ -81,11 +93,9 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  border: pink solid 2px;
 }
 
 #playback-bg-wrapper {
-  /* border: purple 10px solid; */
   width: 100%;
 }
 
@@ -99,8 +109,6 @@ body {
   right: 20px;
   left: 20px;
   text-align: center;
-  border: #29a7d1 solid 2px;
-  /* font-size: 2rem; */
 }
 
 #artist-info-button {
@@ -123,7 +131,6 @@ body {
 
 /* Playlists Button elements - Music Catalog */
 #playlists {
-  border: greenyellow 10px solid;
   grid-area: playlists;
   width: 100%;
   height: fit-content;
@@ -145,8 +152,6 @@ body {
   display: flex;
   justify-content: space-around;
   align-content: space-around;
-  /* align-items: center; */
-  /* justify-items: center; */
 }
 
 .button-text {
@@ -154,8 +159,7 @@ body {
   text-align: center;
   display: flex;
   margin-top: 1%;
-  color: black;
-  border: orange 2px solid;
+  color: #2c2c30;
   font-family: 'Shadows Into Light', cursive;
   font-size: 2rem;
 }
@@ -163,7 +167,6 @@ body {
 
 /* Logo */
 #logo {
-  border: pink 10px solid;
   text-align: center;
   font-weight: 900;
   font-size: 1.5rem;
@@ -249,7 +252,6 @@ body {
 @media (max-width: 1300px) {
   .button-text {
     font-size: 1.65rem;
-    color: red;
   }
 }
 
@@ -262,7 +264,6 @@ body {
 
   .button-text {
     font-size: 1.55rem;
-    color: green;
   }
 }
 
@@ -274,7 +275,6 @@ body {
 
   .button-text {
     font-size: 1.45rem;
-    color: purple;
   }
 }
 
@@ -286,7 +286,6 @@ body {
 
   .button-text {
     font-size: 1.35rem;
-    color: orange;
   }
 }
 
@@ -301,7 +300,6 @@ body {
 
   .button-text {
     font-size: 2.45rem;
-    color: yellowgreen;
   }
 }
 
@@ -316,27 +314,5 @@ body {
 
   .button-text {
     font-size: 1.95rem;
-    color: red;
   }
 }
-
-/* @media screen and (min-width: 1900px) {
-  .button-text {
-    font-size: 1.25rem;
-    color: red;
-  }
-}  */
-
-/* @media screen and (max-width: 1024px) {
-  .music-player-container {
-    padding: 2rem 5rem;
-  }
-} */
-
-/* @media screen and (min-width: 900px) {
-  .music-player-container {
-    grid-template-areas:
-    "music-player"
-    "playlists";
-  }
-} */
