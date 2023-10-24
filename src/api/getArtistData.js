@@ -19,14 +19,14 @@ export async function getArtistData(artistId) {
 
     if (response.ok) {
       const data = await response.json();
-      //TODO Remove later!
-      // console.log(data);
       return data;
     } else {
-      console.error("Error:", response.status, response.statusText);
+      throw new Error("New Error at getArtistData");
+      // console.error("Error:", response.status, response.statusText);
     }
   } catch (error) {
-    console.error("Error:", error);
+    throw error;
+    // console.error("Error:", error);
   }
 };
 

@@ -9,6 +9,7 @@ export const createMusicPlayerContainer = () => {
   userInterface.innerHTML = "";
   const musicPlayerContainer = document.createElement("div");
   musicPlayerContainer.classList.add("music-player-container");
+  musicPlayerContainer.id = "musicPlayerContainer";
   userInterface.appendChild(musicPlayerContainer);
 
   return musicPlayerContainer;
@@ -20,7 +21,8 @@ export async function getArtistInfo(id) {
     const newArtistData = await getArtistData(id);
     return newArtistData;
   } catch (error) {
-    console.error("Error:", error);
+    throw error;
+    // console.error("Error:", error);
   }
 };
 
@@ -99,8 +101,22 @@ export function enableArtistInfoButton (currentPlaylist) {
       });
 
     } catch (error) {
-      console.error("Error:", error);
+      error.message = "hello error message!"
+      console.log(error.message);
+      showErrorMessage(error);
+      // console.error("Error:", error);
     }
   });
 }
+
+// For Error handling - Showing user-friendly error message
+export function showErrorMessage(error) {
+  const errorMessage = error.message;
+
+  const musicPlayerContainer = document.getElementById("musicPlayerContainer");
+  const paragraphElement = document.createElement("p");
+  musicPlayerContainer.appendChild(paragraphElement);
+
+  paragraphElement.textContent = `${errorMessage}`;
+};
 

@@ -11,7 +11,7 @@ export async function getAccessToken() {
   authData.append("client_secret", SPOTIFY_CLIENT_SECRET);
 
   try {
-    const response = await fetch("https://accounts.spotify.com/api/token", {
+    const response = await fetch("https://accounts.spotify.com/api/tokens", {
       method: "POST",
       headers: authHeaders,
       body: authData,
@@ -23,10 +23,10 @@ export async function getAccessToken() {
 
     const data = await response.json();
     const accessToken = data.access_token;
-    // console.log("Access Token:", accessToken);
+
     return accessToken;
   } catch (error) {
-    console.error("Error:", error);
+    // console.error("Error:", error);
     throw error; // Rethrow the error for the calling function to handle
   }
 }
