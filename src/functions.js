@@ -2,6 +2,8 @@
 import { USER_INTERFACE_ID } from "./constants.js";
 import { getArtistData } from "../src/api/getArtistData.js";
 import { createArtistInfoElement } from "../src/views/artistInfoView.js";
+import { createErrorElement } from "./views/errorView.js";
+import { FETCH_ERROR_MESSAGE } from "./constants.js";
 
 // For mainPage - initMusicPlayer
 export const createMusicPlayerContainer = () => {
@@ -87,8 +89,6 @@ export function enableArtistInfoButton (currentPlaylist) {
             
       const userInterface = document.getElementById(USER_INTERFACE_ID);
       userInterface.appendChild(newArtistInfoElement);
-      // const body = document.querySelector("body");
-      // body.appendChild(newArtistInfoElement);
       
       // Show Popup and Close Popup
       const popup = document.getElementById('popup');
@@ -101,22 +101,30 @@ export function enableArtistInfoButton (currentPlaylist) {
       });
 
     } catch (error) {
-      error.message = "hello error message!"
+      error.message = FETCH_ERROR_MESSAGE;
       console.log(error.message);
-      showErrorMessage(error);
-      // console.error("Error:", error);
+      const errorElement = createErrorElement(error.message);
+      console.log(errorElement);
+      showErrorMessage(errorElement);
+
+      throw error;
     }
   });
 }
 
 // For Error handling - Showing user-friendly error message
-export function showErrorMessage(error) {
-  const errorMessage = error.message;
+export function showErrorMessage(errorElement) {
+  const userInterface = document.getElementById(USER_INTERFACE_ID);
+  userInterface.appendChild(errorElement);
 
-  const musicPlayerContainer = document.getElementById("musicPlayerContainer");
-  const paragraphElement = document.createElement("p");
-  musicPlayerContainer.appendChild(paragraphElement);
-
-  paragraphElement.textContent = `${errorMessage}`;
+  // Show Popup and Close Popup
+  const popup = document.getElementById('popup');
+  popup.style.display = 'block';
+      
+  const closePopupButton = document.getElementById('closePopup');
+  closePopupButton.addEventListener('click', () => {
+      popup.style.display = 'none';
+      popup.remove();
+  });
 };
 

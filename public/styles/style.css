@@ -234,6 +234,10 @@ body {
   text-decoration: none;
 }
 
+.error-message .text {
+  margin: 30px;
+}
+
 /* Styling for the close button */
 .close {
   position: absolute;
