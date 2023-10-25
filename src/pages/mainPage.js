@@ -51,10 +51,11 @@ export const initMusicPlayer = () => {
             createMusicPlayerElement(newCurrentPlaylist);
           musicPlayerContainer.appendChild(newMusicPlayerElement);
           
-          const currentAudioId = playlist.playlistName;
-          const currentAudio = document.getElementById(currentAudioId);
-
           createAudio(`${playlist.tracks.track}`).play();
+
+          const cdImage = document.getElementById("cd-player-wrapper");
+          cdImage.classList.add("rotate");
+          cdImage.style.animationPlayState = 'running';
 
           enableArtistInfoButton(newCurrentPlaylist);
         }
