@@ -30,18 +30,6 @@ export const initMusicPlayer = () => {
     ...document.getElementsByClassName("playlist-option"),
   ];
 
-  // let selectedPlaylist = null;
-
-  // playlistsButtons.forEach((button) => {
-  //   availablePlaylists.filter((playlist) => {
-  //     if (playlist.playlistName === button.id) {
-  //         const audioId = playlist.playlistName;
-  //         const audio = createAudio(`${playlist.tracks.track}`);
-  //         audio.id = audioId;
-  //     }
-  //   });
-  // });
-
   playlistsButtons.forEach((button) => {
     button.addEventListener("click", () => {
       availablePlaylists.filter((playlist) => {
@@ -67,13 +55,6 @@ export const initMusicPlayer = () => {
           const currentAudio = document.getElementById(currentAudioId);
 
           createAudio(`${playlist.tracks.track}`).play();
-
-          // const audio = createAudio(`${playlist.tracks.track}`);
-          // audio.play();
-
-          // if (selectedPlaylist !== newCurrentPlaylist) {
-          //   currentAudio.pause();
-          // }
 
           enableArtistInfoButton(newCurrentPlaylist);
         }
