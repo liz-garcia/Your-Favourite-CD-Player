@@ -32,6 +32,16 @@ export const initMusicPlayer = () => {
 
   // let selectedPlaylist = null;
 
+  // playlistsButtons.forEach((button) => {
+  //   availablePlaylists.filter((playlist) => {
+  //     if (playlist.playlistName === button.id) {
+  //         const audioId = playlist.playlistName;
+  //         const audio = createAudio(`${playlist.tracks.track}`);
+  //         audio.id = audioId;
+  //     }
+  //   });
+  // });
+
   playlistsButtons.forEach((button) => {
     button.addEventListener("click", () => {
       availablePlaylists.filter((playlist) => {
@@ -39,22 +49,30 @@ export const initMusicPlayer = () => {
           musicData.currentPlaylistIndex = playlist.index;
           const newCurrentPlaylist = availablePlaylists[playlist.index];
 
-          // selectedPlaylist = newCurrentPlaylist;
+          // Get all <audio> elements
+          let audioElements = document.querySelectorAll('audio');
 
+          // Loop through each <audio> element and remove it
+          audioElements.forEach(function(audioElement) {
+              audioElement.parentNode.removeChild(audioElement);
+          });
           const previousMusicPlayerElement = document.getElementById("musicPlayer");
           previousMusicPlayerElement.remove();
 
           const newMusicPlayerElement =
             createMusicPlayerElement(newCurrentPlaylist);
           musicPlayerContainer.appendChild(newMusicPlayerElement);
+          
+          const currentAudioId = playlist.playlistName;
+          const currentAudio = document.getElementById(currentAudioId);
 
           createAudio(`${playlist.tracks.track}`).play();
 
           // const audio = createAudio(`${playlist.tracks.track}`);
           // audio.play();
 
-          // if (selectedPlaylist !== playlist) {
-          //   audio.pause();
+          // if (selectedPlaylist !== newCurrentPlaylist) {
+          //   currentAudio.pause();
           // }
 
           enableArtistInfoButton(newCurrentPlaylist);
