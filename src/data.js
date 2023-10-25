@@ -81,7 +81,7 @@ export const musicData = {
       playlistName: "Oleg SoulProdMusic",
       cdImage: "public/assets/images/CDs/disc5.png",
       tracks: {
-        track: "public/assets/music/5 - SoulProdMusic/1 - Aesthetics.mp3",
+        track: "public/assets/music/3 - Ghostrifter Official/2 - Purple Dream.mp3",
         2: "public/assets/music/5 - SoulProdMusic/2 - Oktober [Lofi Jazzy beat].mp3",
         3: "public/assets/music/5 - SoulProdMusic/3 - Old clock [chill lofi beats].mp3",
         4: "public/assets/music/5 - SoulProdMusic/4 - Autumn.mp3",
