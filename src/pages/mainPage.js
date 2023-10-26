@@ -1,6 +1,9 @@
 import { createPlaylistsElement } from "../views/playlistsView.js";
 import { createMusicPlayerElement } from "../views/musicPlayerView.js";
-import { enableArtistInfoButton, createMusicPlayerContainer } from "../functions.js";
+import {
+  enableArtistInfoButton,
+  createMusicPlayerContainer,
+} from "../functions.js";
 import { createAudio } from "../effects.js";
 import { musicData } from "../data.js";
 
@@ -38,24 +41,25 @@ export const initMusicPlayer = () => {
           const newCurrentPlaylist = availablePlaylists[playlist.index];
 
           // Get all <audio> elements
-          let audioElements = document.querySelectorAll('audio');
+          let audioElements = document.querySelectorAll("audio");
 
           // Loop through each <audio> element and remove it
-          audioElements.forEach(function(audioElement) {
-              audioElement.parentNode.removeChild(audioElement);
+          audioElements.forEach(function (audioElement) {
+            audioElement.parentNode.removeChild(audioElement);
           });
-          const previousMusicPlayerElement = document.getElementById("musicPlayer");
+          const previousMusicPlayerElement =
+            document.getElementById("musicPlayer");
           previousMusicPlayerElement.remove();
 
           const newMusicPlayerElement =
             createMusicPlayerElement(newCurrentPlaylist);
           musicPlayerContainer.appendChild(newMusicPlayerElement);
-          
+
           createAudio(`${playlist.tracks.track}`).play();
 
           const cdImage = document.getElementById("cd-player-wrapper");
           cdImage.classList.add("rotate");
-          cdImage.style.animationPlayState = 'running';
+          cdImage.style.animationPlayState = "running";
 
           enableArtistInfoButton(newCurrentPlaylist);
         }

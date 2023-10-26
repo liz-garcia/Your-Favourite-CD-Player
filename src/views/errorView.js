@@ -1,10 +1,10 @@
 export const createErrorElement = (errorMessage) => {
-    const element = document.createElement("div");
-    element.classList.add("popup");
-    element.classList.add("error-message");
-    element.id = "popup";
+  const element = document.createElement("div");
+  element.classList.add("popup");
+  element.classList.add("error-message");
+  element.id = "popup";
 
-    element.innerHTML = String.raw`
+  element.innerHTML = String.raw`
       <div class="popup-content">
           <span class="close" id="closePopup">&times;</span>
           <div class="text">

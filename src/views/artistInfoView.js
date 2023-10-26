@@ -1,9 +1,9 @@
 export const createArtistInfoElement = (artistInfoObject) => {
-    const element = document.createElement("div");
-    element.classList.add("popup");
-    element.id = "popup";
+  const element = document.createElement("div");
+  element.classList.add("popup");
+  element.id = "popup";
 
-    element.innerHTML = String.raw`
+  element.innerHTML = String.raw`
       <div class="popup-content">
           <span class="close" id="closePopup">&times;</span>
           <img src="${artistInfoObject.imgUrl}" alt="${artistInfoObject.name}">

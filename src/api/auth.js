@@ -26,7 +26,7 @@ export async function getAccessToken() {
 
     return accessToken;
   } catch (error) {
-    // console.error("Error:", error);
-    throw error; // Rethrow the error for the calling function to handle
+    // Rethrow the error for the calling function to handle
+    throw error;
   }
 }

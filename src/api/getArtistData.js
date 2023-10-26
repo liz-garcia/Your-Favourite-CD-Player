@@ -1,8 +1,5 @@
 import { getAccessToken } from "./auth.js";
 
-// const artistId = "5VWxPzSlM3bEky01nXffoN";
-// Replace with the artist's Spotify ID
-
 // Create a function to fetch artist data by ID
 export async function getArtistData(artistId) {
   try {
@@ -28,7 +25,4 @@ export async function getArtistData(artistId) {
     throw error;
     // console.error("Error:", error);
   }
-};
-
-// Call the function with an artist's Spotify ID
-// getArtistData(artistId);
+}

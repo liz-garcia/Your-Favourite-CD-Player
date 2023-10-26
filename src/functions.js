@@ -15,7 +15,7 @@ export const createMusicPlayerContainer = () => {
   userInterface.appendChild(musicPlayerContainer);
 
   return musicPlayerContainer;
-}
+};
 
 // For the Get Artist Info Button
 export async function getArtistInfo(id) {
@@ -24,9 +24,8 @@ export async function getArtistInfo(id) {
     return newArtistData;
   } catch (error) {
     throw error;
-    // console.error("Error:", error);
   }
-};
+}
 
 export function filterArtistInfo(infoObject) {
   // Name
@@ -72,33 +71,32 @@ export function filterArtistInfo(infoObject) {
   };
 
   return filteredObject;
-};
+}
 
-export function enableArtistInfoButton (currentPlaylist) {
+export function enableArtistInfoButton(currentPlaylist) {
   const currentArtistId = currentPlaylist.artistId;
   const artistInfoButton = document.getElementById("artist-info-button");
-  
+
   artistInfoButton.addEventListener("click", async () => {
     try {
       const newArtistInfo = await getArtistInfo(currentArtistId);
 
       const newArtistInfoObject = filterArtistInfo(newArtistInfo);
       console.log(newArtistInfoObject.name);
-      const newArtistInfoElement =createArtistInfoElement(newArtistInfoObject);
-            
+      const newArtistInfoElement = createArtistInfoElement(newArtistInfoObject);
+
       const userInterface = document.getElementById(USER_INTERFACE_ID);
       userInterface.appendChild(newArtistInfoElement);
-      
-      // Show Popup and Close Popup
-      const popup = document.getElementById('popup');
-      popup.style.display = 'block';
-      
-      const closePopupButton = document.getElementById('closePopup');
-      closePopupButton.addEventListener('click', () => {
-          popup.style.display = 'none';
-          popup.remove();
-      });
 
+      // Show Popup and Close Popup
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+
+      const closePopupButton = document.getElementById("closePopup");
+      closePopupButton.addEventListener("click", () => {
+        popup.style.display = "none";
+        popup.remove();
+      });
     } catch (error) {
       error.message = FETCH_ERROR_MESSAGE;
       console.log(error.message);
@@ -117,13 +115,12 @@ export function showErrorMessage(errorElement) {
   userInterface.appendChild(errorElement);
 
   // Show Popup and Close Popup
-  const popup = document.getElementById('popup');
-  popup.style.display = 'block';
-      
-  const closePopupButton = document.getElementById('closePopup');
-  closePopupButton.addEventListener('click', () => {
-      popup.style.display = 'none';
-      popup.remove();
-  });
-};
+  const popup = document.getElementById("popup");
+  popup.style.display = "block";
 
+  const closePopupButton = document.getElementById("closePopup");
+  closePopupButton.addEventListener("click", () => {
+    popup.style.display = "none";
+    popup.remove();
+  });
+}

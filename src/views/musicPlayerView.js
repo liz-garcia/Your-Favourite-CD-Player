@@ -25,4 +25,3 @@ export const createMusicPlayerElement = (playlist) => {
   `;
   return element;
 };
-
