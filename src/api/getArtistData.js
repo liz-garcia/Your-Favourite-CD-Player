@@ -19,10 +19,8 @@ export async function getArtistData(artistId) {
       return data;
     } else {
       throw new Error("New Error at getArtistData");
-      // console.error("Error:", response.status, response.statusText);
     }
   } catch (error) {
     throw error;
-    // console.error("Error:", error);
   }
 }
