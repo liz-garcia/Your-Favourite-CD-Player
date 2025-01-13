@@ -1,6 +1,6 @@
 # Lofi CD-Player
 
-### ✅ <a href="https://lofi-cd-player.netlify.app/" target="_blank" rel="noopener noreferrer">Click here for the Demo version</a>
+### ✅ [Click here for the Demo version](https://lofi-cd-player.netlify.app/)
 
 ![Lofi CD-Player - mobile views](https://github.com/liz-garcia/Lofi-CD-Player/assets/141901981/0b1377d0-7fdf-4a93-a958-0d1733ef8082)
 
