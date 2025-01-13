@@ -1,12 +1,12 @@
 # Lofi CD-Player
 
+### ✅ <a href="https://lofi-cd-player.netlify.app/" target="_blank" rel="noopener noreferrer">Click here for the Demo version</a>
+
 ![Lofi CD-Player - mobile views](https://github.com/liz-garcia/Lofi-CD-Player/assets/141901981/0b1377d0-7fdf-4a93-a958-0d1733ef8082)
 
 ## Overview
 
 ### Music Player Web Application
-
-<a href="https://lofi-cd-player.netlify.app/" target="_blank">Lofi CD-Player Demo</a>
 
 The Music Player Web Application is a responsive single-page application that utilizes the Spotify API to fetch data from a selection of artists and allows users to enjoy a bit of music within their web browser.
 
